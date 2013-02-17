@@ -16,11 +16,10 @@ class MoviesController < ApplicationController
     #in the current window something is ordered, save the change, but no need to change display
     if params[:order_by]
         @order_by = params[:order_by]
-#        session[:organize_by] = params[:order_by]
-    #one of the columns in previous section are ordered, therefore redirection is needed
-#    elsif session[:order_by]
-#        @order_by = session[:order_by]
-#        redirect = true 
+        session[:order_by] = params[:order_by]
+    #one of the columns in previous section are ordered, therefore redirection is needed, but we'll let rating say that
+    elsif session[:order_by]
+        @order_by = session[:order_by]
     #no columns are/were sorted, keep that way
     else
         @order_by = nil
