@@ -14,17 +14,17 @@ class MoviesController < ApplicationController
 
     #update the ordering of the columns, and check for redirection need from columns being ordered
     #in the current window something is ordered, save the change, but no need to change display
-#    if params[:order_by]
-#        @order_by = params[:order_by]
+    if params[:order_by]
+        @order_by = params[:order_by]
 #        session[:organize_by] = params[:order_by]
     #one of the columns in previous section are ordered, therefore redirection is needed
 #    elsif session[:order_by]
 #        @order_by = session[:order_by]
 #        redirect = true 
     #no columns are/were sorted, keep that way
-#    else
-#        @order_by = nil
-#    end
+    else
+        @order_by = nil
+    end
     
     #keeps track of ratings filter, and checks for redirection need from one or more ratings being selected
     #if there is no checked boxes but the refresh button is selected, then send all the movies since not filtering anything
